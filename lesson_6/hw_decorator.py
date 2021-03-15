@@ -11,7 +11,7 @@ def prost_get_items(stor):
         def wrapper(*args, **kwargs):
             res = func(*args, **kwargs)
             stor[func.__name__] = res
-            return func
+            return res
         return wrapper
     return get_items
 
@@ -22,7 +22,7 @@ def prost_get_name(stor):
         def wrapper(*args, **kwargs):
             res = func(*args, **kwargs)
             stor.append(func.__name__)
-            return func
+            return res
         return wrapper
     return get_items
 
@@ -63,3 +63,5 @@ get_even(20)
 
 print(stor_items)
 print(stor_names)
+
+print(get_sum(22, 4, 1))
